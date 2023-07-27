@@ -3,7 +3,6 @@
     <header class="header d-flex">
       <div class="wrapper__content ">
         <div class="header__form">
-          <div v-if="!openForm" class="logo mobile-only">InsightStream</div>
           <form class="web-only">
             <v-textarea prepend-inner-icon="mdi-comment"
                         class="header-text"
@@ -17,7 +16,7 @@
                         row-height="25"
                         :no-resize="true"></v-textarea>
           </form>
-          <form class="mobile-only" v-if="openForm">
+          <form class="mobile-only">
             <v-textarea prepend-inner-icon="mdi-comment"
                         class="header-text"
                         v-on:keyup.enter="onSubmit"
@@ -30,15 +29,6 @@
                         :no-resize="true"></v-textarea>
           </form>
           <div class="d-flex">
-            <v-btn
-                text
-                color="primary"
-                v-if="!openForm"
-                class="mobile-only mr-7"
-                @click="toggleForm()"
-            >
-              <i class="icon search-small"></i>
-            </v-btn>
             <v-btn
                 text
                 color="primary"
@@ -182,7 +172,6 @@ export default {
       menu: false,
       modal: false,
       menu2: false,
-      openForm: false,
       dates: [],
       items: [
         { text: 'HR - отдел', value: '' },
@@ -241,8 +230,7 @@ export default {
       this.formText = '';
     },
     toggleForm() {
-      this.openForm = !this.openForm;
-      if (this.$refs && this.openForm) {
+      if (this.$refs) {
         this.$nextTick(() => {
           setTimeout(() => {
             this.$refs.inputKeyRefMob.$refs.input.focus();
