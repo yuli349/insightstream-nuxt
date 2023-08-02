@@ -24,7 +24,7 @@
                         row-height="25"
                         :no-resize="true"></v-textarea>
           </form>
-          <div v-if="startPage" class="logo">
+          <div v-if="startPage" class="logo mobile-only">
             <div class="logo__name">
               <i class="circle"></i>
               <span>Insight</span>
