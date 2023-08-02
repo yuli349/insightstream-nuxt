@@ -217,6 +217,10 @@
   width: 300px !important;
 }
 
+.v-date-picker-table {
+  height: 228px !important;
+}
+
 .v-chip__content {
   white-space: nowrap;
   overflow: hidden;
@@ -346,12 +350,97 @@
     margin-right: 10px;
   }
 
-  .header__doc, .header__author, .header__date {
+  .close-block.header__doc, .close-block.header__author, .close-block.header__date {
     display: none;
+  }
+
+  .header__doc .v-input__icon--prepend .v-icon,
+  .header__author .v-input__icon--prepend .v-icon,
+  .header__date .v-input__icon--prepend .v-icon {
+    width: 50px;
+    height: 50px;
+    background-size: 100%;
+  }
+
+  .header__doc .mdi-calendar::before,
+  .header__author .mdi-calendar::before,
+  .header__date .mdi-calendar::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-size: 100%;
+  }
+
+  .header__doc .v-input,
+  .header__author .v-input,
+  .header__date .v-input {
+    margin-right: 0;
+    width: 66px;
+    height: 50px;
+    background: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__doc,
+  .header__author,
+  .header__date {
+    margin-top: 20px;
+  }
+
+  .filters-blocks {
+    width: 100%;
+    justify-content: space-between;
+
+    &.mobile-only {
+      display: flex !important;
+    }
+  }
+
+  .filters .v-text-field__slot {
+    display: none !important;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .header.start {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    margin: auto;
+  }
+
+  .auth-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #000;
+    background: #959595;
+    border-radius: 20px;
+    font-size: 16px !important;
+    text-transform: inherit;
   }
 
   .header__form form {
     width: calc(100% - 40px);
+  }
+
+  .header__form form.start {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .header__form form.start {
+    .theme--light.v-input {
+      box-shadow: 0px 0px 10px #dedede;
+    }
   }
 
   .header__form .v-btn.mobile-only {
@@ -359,11 +448,14 @@
     min-width: 40px;
     height: 40px;
     padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .header__form {
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    position: relative;
   }
 
   .mobile-only {
@@ -378,25 +470,74 @@
     height: 30px;
   }
 
+  .header__doc .v-input__icon--prepend .v-icon {
+    background: url('../../assets/icons/calend-mob.svg') no-repeat center center;
+  }
+
+  .header__author .v-input__icon--prepend .v-icon {
+    background: url('../../assets/icons/users-mob.svg') no-repeat center center;
+  }
+
+  .header__date .mdi-calendar::before {
+    background: url('../../assets/icons/calendar-mob.svg') no-repeat center center;
+  }
+
+  .header__date .mdi-calendar::before {
+    background: url('../../assets/icons/calendar-mob.svg') no-repeat center center;
+  }
+
+  .header__date .v-text-field__slot {
+    display: block !important;
+    color: transparent;
+  }
+
+  .header__form .header__date .theme--light.v-input:not(.v-input--is-disabled) input {
+    color: transparent !important;
+    position: relative;
+    left: -29px;
+    opacity: 0;
+  }
+
+  .theme--light.v-chip:not(.v-chip--active) {
+    display: none;
+  }
+
+  .header__doc .align-self-center, .header__author .align-self-center {
+    display: none;
+  }
+
   .answer .question {
     padding: 10px 20px !important;
   }
 
   .logo {
     color: #000;
-    font-size: 24px;
-    padding-left: 48px;
+    font-size: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &:before {
-      content: "";
-      width: 20px;
-      height: 20px;
+    &__name {
+      font-size: 48px;
+      line-height: 1;
+      position: relative;
+    }
+
+    &__name span:first-of-type {
+      position: relative;
+      top: -12px;
+      left: 10px;
+    }
+
+    .circle {
+      width: 63px;
+      height: 63px;
       position: absolute;
-      left: 0;
-      top: 10px;
       background: #32B4DD;
-      border-radius: 10px;
+      left: -1px;
+      border-radius: 35px !important;
+      top: -19px;
     }
   }
 
@@ -432,7 +573,17 @@
 
   .logo {
     font-size: 18px;
-    padding-left: 30px;
+  }
+
+  .logo__name {
+    font-size: 43px;
+  }
+
+  .logo .circle {
+    width: 53px;
+    height: 53px;
+    left: 0;
+    top: -17px;
   }
 
   .header__form {

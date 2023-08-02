@@ -1,7 +1,15 @@
 <template>
   <div data-app>
-    <header class="header d-flex">
-      <div class="wrapper__content ">
+    <header class="header d-flex" :class="{'start': startPage}">
+      <v-btn
+        text
+        v-if="startPage"
+        color="primary"
+        class="mobile-only auth-btn"
+        @click=""
+      >войти
+      </v-btn>
+      <div class="wrapper__content">
         <div class="header__form">
           <form class="web-only">
             <v-textarea prepend-inner-icon="mdi-comment"
@@ -16,28 +24,39 @@
                         row-height="25"
                         :no-resize="true"></v-textarea>
           </form>
-          <form class="mobile-only">
+          <div v-if="startPage" class="logo">
+            <div class="logo__name">
+              <i class="circle"></i>
+              <span>Insight</span>
+              <span>Stream</span>
+            </div>
+            <div>все ответы здесь</div>
+          </div>
+          <form class="mobile-only" :class="{'start': startPage}">
             <v-textarea prepend-inner-icon="mdi-comment"
                         class="header-text"
                         v-on:keyup.enter="onSubmit"
                         v-model="formText"
                         clearable
+                        placeholder="задайте вопрос"
                         auto-grow
                         ref="inputKeyRefMob"
                         variant="outlined"
                         rows="1"
                         :no-resize="true"></v-textarea>
           </form>
-          <div class="d-flex">
-            <v-btn
-                text
-                color="primary"
-                class="mobile-only filters"
-                @click=""
-            >
-              <i class="icon arrow"></i>
-            </v-btn>
-            <div class="header__date">
+          <v-btn
+            text
+            color="primary"
+            v-if="!startPage"
+            class="mobile-only filters"
+            @click="toggleFilters()"
+          >
+            <i class="icon arrow"></i>
+          </v-btn>
+          <div class="d-flex filters-blocks">
+
+            <div class="header__date" :class="{'close-block': !openFilters}">
               <v-menu
                   ref="menu"
                   v-model="menu"
@@ -84,7 +103,7 @@
                 </v-date-picker>
               </v-menu>
             </div>
-            <div class="header__author">
+            <div class="header__author" :class="{'close-block': !openFilters}">
               <v-select
                   v-model="value"
                   :items="items"
@@ -113,7 +132,7 @@
                 </template>
               </v-select>
             </div>
-            <div class="header__doc">
+            <div class="header__doc" :class="{'close-block': !openFilters}">
               <v-select
                   v-model="valueDoc"
                   contentClass="doc-menu"
@@ -169,7 +188,9 @@ export default {
   data() {
     return {
       formText: '',
+      openFilters: false,
       menu: false,
+      startPage: true,
       modal: false,
       menu2: false,
       dates: [],
@@ -224,8 +245,12 @@ export default {
       return this.moment(date)
           .format('DD.MM.YYYY');
     },
+    toggleFilters() {
+      this.openFilters = !this.openFilters;
+    },
     onSubmit(e) {
       e.preventDefault();
+      this.startPage = false;
       this.$emit('add-information', this.formText);
       this.formText = '';
     },
