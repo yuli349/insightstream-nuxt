@@ -5,6 +5,13 @@
   border-bottom: 1px solid var(--border-color);
   padding: 20px 60px;
 
+  &__container {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: #fff;
+  }
+
   input,
   input::-webkit-input-placeholder {
     color: #000000 !important;
@@ -209,6 +216,10 @@
 .v-menu__content .v-list-item__action .v-input__control,
 .v-menu__content .v-list-item__action .v-input__slot {
   margin-right: 12px !important;
+}
+
+.v-application--wrap {
+  min-height: auto !important;
 }
 
 .v-menu__content {

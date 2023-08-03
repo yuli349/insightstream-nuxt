@@ -1,5 +1,5 @@
 <template>
-  <div data-app>
+  <div data-app class="header__container">
     <header class="header d-flex" :class="{'start': startPage}">
       <v-btn
         text
@@ -223,6 +223,7 @@ export default {
       this.$nextTick(() => {
         setTimeout(() => {
           this.$refs.inputKeyRef.$refs.input.focus();
+          this.$refs.inputKeyRefMob.$refs.input.focus();
         }, 0);
       });
     }
