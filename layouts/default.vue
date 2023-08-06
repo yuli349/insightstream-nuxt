@@ -9,10 +9,10 @@
                         v-on:before-enter="beforeEnter"
                         v-on:enter="enter"
                         v-on:leave="leave">
-        <div v-for="(item, index) in arrAnswers" :key="index"
+        <li v-for="(item, index) in arrAnswers" :key="item.id" :data-index="index"
              class="arr-answer">
           <Answer :item="item"></Answer>
-        </div>
+        </li>
       </transition-group>
     </main>
   </div>
@@ -47,14 +47,13 @@ export default {
   },
 
   updated() {
-    let element = document.getElementById("container");
-    element.scrollIntoView({ block: "end"});
   },
 
   methods: {
     submitQuestion(text) {
       this.answersList[this.count].text = text;
-      this.arrAnswers.push(this.answersList[this.count]);
+      // this.arrAnswers.unshift(this.answersList[this.count]);
+      this.arrAnswers.splice(0, 0, this.answersList[this.count]);
       this.count++;
     },
     beforeEnter(el) {

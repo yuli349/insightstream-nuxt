@@ -267,11 +267,54 @@
 
 }
 
+.arr-answer {
+  transition: all 1s;
+}
+.list-complete-enter, .list-complete-leave-to
+  /* .list-complete-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+.list-complete-leave-active {
+  position: absolute;
+}
+
 @media (max-width: 700px) {
   .answer__footer-question.d-flex {
     margin: 0 0 10px 0 !important;
     line-height: normal;
   }
+
+  .answer .wrapper__content {
+    padding: 15px 0 !important;
+  }
+
+  .answer .question {
+    margin-bottom: 10px !important;
+  }
+
+  .answer__block {
+    padding: 15px 0 0 0;
+    margin-bottom: 20px;
+  }
+
+  .answer__text {
+    margin: 15px 0 0;
+    padding: 0 15px;
+  }
+
+  .v-application .mt-2 {
+    margin-top: 4px!important;
+  }
+
+  .answer__worker-info {
+    margin-bottom: 15px;
+  }
+
+  .answer__footer-input {
+    margin-bottom: 10px;
+  }
+
+
 
 }
 
