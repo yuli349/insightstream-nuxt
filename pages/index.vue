@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Hello world</h1>
+    <h1>vue 2</h1>
   </div>
 </template>
 
