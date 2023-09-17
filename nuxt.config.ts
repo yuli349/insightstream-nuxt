@@ -1,6 +1,6 @@
 export default {
   nitro: {
-    preset: 'vercel-edge',
+    minify: false,
   },
 
   build: {
