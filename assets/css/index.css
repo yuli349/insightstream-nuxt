@@ -1,0 +1,128 @@
+body {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.theme--light.v-text-field:not(.v-input--has-state):hover>.v-input__control>.v-input__slot:before,
+.v-text-field.v-input--is-focused>.v-input__control>.v-input__slot:after,
+.theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+  border-color: transparent;
+  height: 0;
+  display: none;
+}
+
+.wrapper .v-text-field .v-field--no-label input,
+.wrapper .v-text-field .v-field--active input {
+  font-size: 20px;
+  min-height: 40px;
+  padding: 5px 20px;
+}
+
+.wrapper .v-field__input {
+  padding: 12px 20px;
+}
+
+li {
+  list-style: none !important;
+}
+
+.wrapper .v-field__prepend-inner > .v-icon {
+  font-size: 30px;
+  opacity: 1;
+}
+
+.wrapper .v-field--variant-outlined .v-field__outline {
+  border-radius: 12px;
+}
+
+.login .wrapper .v-field--variant-outlined .v-field__outline {
+  border-radius: 40px;
+  box-shadow: 0px 0px 6px 3px rgba(0, 0, 0, 0.10);
+}
+
+.wrapper .v-btn {
+  min-height: 42px;
+  font-size: 20px;
+  text-transform: inherit;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: normal;
+}
+
+.wrapper .v-btn:hover {
+  background-color: #1E91B5 !important;
+}
+
+.ui-input .v-text-field {
+  padding: 0;
+  margin-top: 0;
+}
+
+.v-input__slot {
+  margin-bottom: 2px !important;
+}
+
+.v-btn {
+  border-radius: 40px !important;
+  background-color: #32B4DD !important;
+  display: flex;
+  padding: 10px 40px !important;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: inherit;
+  align-items: center;
+  height: auto !important;
+  letter-spacing: normal;
+  margin: 8px auto 24px;
+}
+
+.login__checkbox {
+  margin: auto;
+  position: relative;
+  left: -5px;
+}
+
+.login__checkbox label {
+  margin-bottom: 2px;
+}
+
+.v-input--selection-controls__input {
+  margin-right: 10px;
+}
+
+.ui-input .theme--light.v-input input {
+  min-height: 40px;
+  font-size: 20px;
+  padding: 8px 20px;
+  border-radius: 40px;
+  border: 1px solid #D9D9D9;
+}
+
+.ui-select .v-input__slot {
+  min-height: 40px;
+  font-size: 20px;
+  padding: 1px 20px;
+  border-radius: 40px !important;
+  border: 1px solid #D9D9D9;
+}
+
+.ui-select .v-select {
+  padding-top: 0;
+}
+
+.ui-select .mdi-menu-down::before {
+  content: "\F0415";
+}
+
+@media (max-width: 730px) {
+  .ui-select .v-input__slot,
+  .ui-input .theme--light.v-input input {
+    font-size: 16px;
+  }
+
+  .wrapper .v-text-field .v-field--no-label input, .wrapper .v-text-field .v-field--active input {
+    font-size: 16px;
+  }
+}
+
+

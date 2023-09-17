@@ -1,0 +1,97 @@
+.logo {
+  color: #000;
+  font-size: 32px;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+
+  &__name {
+    font-size: 96px;
+    line-height: 1;
+    position: relative;
+    left: 20px;
+  }
+
+  &__name span:first-of-type {
+    position: relative;
+    top: -23px;
+    left: 2px;
+  }
+
+  .circle {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    background: #32B4DD;
+    left: -31px;
+    top: -38px;
+    border-radius: 65px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo {
+    font-size: 20px;
+
+    &__name {
+      font-size: 72px;
+      left: 10px;
+    }
+
+    .circle {
+      width: 90px;
+      height: 90px;
+      left: -17px;
+      top: -25px;
+    }
+
+    &__name span:first-of-type {
+      top: -17px;
+      left: 2px;
+    }
+
+  }
+}
+
+@media (max-width: 730px) {
+  .logo {
+
+    &__name {
+      font-size: 48px;
+    }
+
+    .circle {
+      width: 63px;
+      height: 63px;
+      left: -12px;
+      top: -20px;
+    }
+
+    &__name span:first-of-type {
+      top: -12px;
+    }
+
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+
+    &__name {
+      font-size: 40px;
+      left: 0;
+    }
+
+    &__name span:first-of-type {
+      top: -11px;
+    }
+
+    .circle {
+      width: 53px;
+      height: 53px;
+      top: -17px;
+    }
+  }
+}

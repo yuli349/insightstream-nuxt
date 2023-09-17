@@ -198,6 +198,10 @@ body .v-application .mr-2 {
     background: url("../../assets/icons/mail.svg") no-repeat;
   }
 
+  &__menu-link--user .icon {
+    background: url("../../assets/icons/user-plus.svg") no-repeat;
+  }
+
   &__menu-link--messages-square .icon {
     background: url("../../assets/icons/messages-square.svg") no-repeat;
   }

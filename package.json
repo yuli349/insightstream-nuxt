@@ -1,27 +1,23 @@
 {
-  "name": "nuxt-crash-course",
-  "version": "1.0.0",
-  "description": "My gnarly Nuxt.js project",
-  "author": "Vladilen",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "dependencies": {
-    "@nuxtjs/axios": "^5.4.0",
-    "bootstrap": "^4.3.1",
-    "cross-env": "^5.2.0",
-    "moment": "^2.29.4",
-    "nuxt": "^2.17.1",
-    "velocity-animate": "^1.5.2"
+    "build": "npx nuxi build",
+    "dev": "npx nuxi dev",
+    "generate": "npx nuxi generate",
+    "preview": "npx nuxi preview",
+    "postinstall": "npx nuxi prepare"
   },
   "devDependencies": {
     "@invictus.codes/nuxt-vuetify": "^0.3.0",
-    "@nuxtjs/vuetify": "^1.12.3",
-    "consola": "^3.0.1",
-    "nodemon": "^1.18.9"
+    "@types/jsonwebtoken": "^9.0.2",
+    "nuxt": "^3.0.0",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "@vuepic/vue-datepicker": "^6.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "postmark": "^3.0.19"
   }
 }
