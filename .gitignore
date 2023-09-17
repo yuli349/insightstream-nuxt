@@ -58,6 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.build
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -67,6 +68,7 @@ typings/
 
 # nuxt.js build output
 .nuxt
+.output
 
 # Nuxt generate
 dist
@@ -77,8 +79,17 @@ dist
 # Serverless directories
 .serverless
 
-# IDE
+# IDE / Editor
 .idea
 
 # Service worker
 sw.*
+
+# macOS
+.DS_Store
+
+# Vim swap files
+*.swp
+
+# Vercel
+.vercel

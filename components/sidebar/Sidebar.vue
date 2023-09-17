@@ -8,6 +8,12 @@
         </nuxt-link>
       </li>
       <li class="sidebar__menu-item">
+        <nuxt-link class="sidebar__menu-link sidebar__menu-link--user"
+                     to="#">
+          <i class="icon"></i>
+        </nuxt-link>
+      </li>
+      <li class="sidebar__menu-item">
         <nuxt-link class="sidebar__menu-link sidebar__menu-link--mail"
                      to="#">
           <i class="icon"></i>
